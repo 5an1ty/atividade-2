@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chamados</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Cabeçalho da página -->
+    <header>
+        <h1>Sistema de Chamados</h1>
+        <nav>
+            <a href="#cadastro">Cadastrar novo chamado</a>
+            <div></div>
+            <a href="#listagem">Ver Chamados</a>
+        </nav>
+    </header>
+
+    <!-- Conteúdo principal -->
+    <main>
+        <!-- Seção 1: Formulário -->
+        <section id="cadastro">
+            <h2>Novo Chamado</h2>
+            <form id="form-chamado">
+                <div>
+                    <label for="titulo">Título do Chamado:</label>
+                    <!-- CORRIGIDO: id alterado para 'titulo' (minúsculo) -->
+                    <input type="text" id="titulo" placeholder="Ex: Esqueci a senha">
+                    <small class="msg-erro" id="erro-titulo"></small>
+                </div>
+
+                <div>
+                    <label for="categoria">Categoria:</label>
+                    <select id="categoria">
+                        <option value="">-- Selecione --</option>
+                        <option value="Suporte">Suporte técnico</option>
+                        <option value="Manutenção">Manutenção Predial</option>
+                    </select>
+                    <small class="msg-erro" id="erro-categoria"></small>
+                </div>
+                <button type="submit">Cadastrar Chamado</button>
+            </form>
+        </section>
+
+        <!-- Seção 2: listagem e busca -->
+        <section id="listagem">
+            <h2>Lista de Chamados</h2>
+            <div>
+                <input type="text" id="campo-busca" placeholder="Buscar Chamado">
+            </div>
+            <!-- Lista onde os itens cadastrados vão aparecer via JavaScript -->
+            <ul id="lista-chamados"></ul>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
