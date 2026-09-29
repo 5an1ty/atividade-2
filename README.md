@@ -1,4 +1,4 @@
-Avaliação 02
+atividade-02
 representa um fluxo de uso interno, com navegação entre seções/páginas, formulário com validações e uma listagem com interação (filtro/ordenação/simulação), mantendo rastreabilidade das atividades no quadro de tarefas e no repositório.
 
 Funcionalidades
