@@ -1,81 +1,160 @@
-/* Reset básico: limpa margens padrão dos navegadores */
-*{
+/* Reset e Variáveis Básicas */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-body{
+body {
     background-color: #f4f4f9;
     padding: 20px;
+    color: #333;
 }
 
 /* Cabeçalho */
-header {
+.header {
     background-color: #0056b3;
-    color: white;
-    padding: 15px;
-    display: flex; /* Coloca o titulo e os links lado a lado */
+    color: #ffffff;
+    padding: 15px 20px;
+    display: flex;
     justify-content: space-between;
     align-items: center;
-    border-radius: 5px;
+    border-radius: 6px;
 }
 
-Header nav a {
-    color: white;
+.header-nav .nav-link {
+    color: #ffffff;
     text-decoration: none;
     margin-left: 15px;
+    font-weight: 500;
+    transition: opacity 0.2s;
 }
 
-/*Seções*/
-main {
+.header-nav .nav-link:hover {
+    opacity: 0.8;
+}
+
+/* Layout Principal */
+.main-content {
     margin-top: 20px;
     display: flex;
-    flex-direction: column; /* no celular, um fica em cima do outro*/
+    flex-direction: column;
     gap: 20px;
 }
 
-section {
-    background: white;
+.card-section {
+    background: #ffffff;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(red, green, blue, alpha);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/*Campos do form */
-form div {
+.card-section h2 {
+    margin-bottom: 15px;
+    font-size: 1.25rem;
+    color: #0056b3;
+}
+
+/* Formitários e Controles */
+.form-group {
     margin-bottom: 15px;
     display: flex;
     flex-direction: column;
 }
-input, select, button{
+
+label {
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input, select, .btn {
     padding: 10px;
-    margin-top: 5;
     border: 1px solid #ccc;
     border-radius: 4px;
+    font-size: 0.95rem;
 }
-button {
-    background-color: #28a745;
-    color: white;
-    border: none;
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #0056b3;
+}
+
+.btn {
     cursor: pointer;
     font-weight: bold;
+    transition: background-color 0.2s;
+    border: none;
+}
+
+.btn-primary {
+    background-color: #28a745;
+    color: #ffffff;
+    width: 100%;
+}
+
+.btn-primary:hover {
+    background-color: #218838;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: #ffffff;
+    padding: 5px 10px;
+    font-size: 0.85rem;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
 }
 
 .msg-erro {
-    color: red;
-    font-size: 12px;
-    margin-top: 3px;
+    color: #d9534f;
+    font-size: 0.8rem;
+    margin-top: 4px;
+    min-height: 16px;
 }
-/* responsividade minima (requisito de 2 larguras de tela)
-quando a tela tiver 768px ou mais */
-@media (min-width: 768px) {
-    main {
-        flex-direction: row; /* coloca o formulário e lista lado a lado*/
 
+/* Lista de Chamados */
+.search-box {
+    margin-bottom: 15px;
+}
+
+.search-box input {
+    width: 100%;
+}
+
+.chamados-list {
+    list-style: none;
+}
+
+.chamado-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.chamado-item:last-child {
+    border-bottom: none;
+}
+
+.chamado-vazio {
+    color: #777;
+    text-align: center;
+    padding: 15px 0;
+}
+
+/* Responsividade */
+@media (min-width: 768px) {
+    .main-content {
+        flex-direction: row;
+        align-items: flex-start;
     }
-    section {
-        flex: 1; /* cada seção ocupa metade da tela*/
+    
+    .card-section {
+        flex: 1;
     }
 }

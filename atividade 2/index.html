@@ -3,54 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chamados</title>
+    <title>Sistema de Chamados</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Cabeçalho da página -->
-    <header>
+    <header class="header">
         <h1>Sistema de Chamados</h1>
-        <nav>
-            <a href="#cadastro">Cadastrar novo chamado</a>
-            <div></div>
-            <a href="#listagem">Ver Chamados</a>
+        <nav class="header-nav">
+            <a href="#cadastro" class="nav-link">Novo Chamado</a>
+            <a href="#listagem" class="nav-link">Listagem</a>
         </nav>
     </header>
 
-    <!-- Conteúdo principal -->
-    <main>
-        <!-- Seção 1: Formulário -->
-        <section id="cadastro">
+    <main class="main-content">
+        <!-- Seção de Cadastro -->
+        <section id="cadastro" class="card-section">
             <h2>Novo Chamado</h2>
-            <form id="form-chamado">
-                <div>
-                    <label for="titulo">Título do Chamado:</label>
-                    <!-- CORRIGIDO: id alterado para 'titulo' (minúsculo) -->
-                    <input type="text" id="titulo" placeholder="Ex: Esqueci a senha">
+            <form id="form-chamado" class="form">
+                <div class="form-group">
+                    <label for="titulo">Título do Chamado</label>
+                    <input type="text" id="titulo" placeholder="Ex: Computador não liga" autocomplete="off">
                     <small class="msg-erro" id="erro-titulo"></small>
                 </div>
 
-                <div>
-                    <label for="categoria">Categoria:</label>
+                <div class="form-group">
+                    <label for="categoria">Categoria</label>
                     <select id="categoria">
-                        <option value="">-- Selecione --</option>
-                        <option value="Suporte">Suporte técnico</option>
+                        <option value="">-- Selecione uma categoria --</option>
+                        <option value="Suporte">Suporte Técnico</option>
                         <option value="Manutenção">Manutenção Predial</option>
                     </select>
                     <small class="msg-erro" id="erro-categoria"></small>
                 </div>
-                <button type="submit">Cadastrar Chamado</button>
+
+                <button type="submit" class="btn btn-primary">Cadastrar Chamado</button>
             </form>
         </section>
 
-        <!-- Seção 2: listagem e busca -->
-        <section id="listagem">
+        <!-- Seção de Listagem -->
+        <section id="listagem" class="card-section">
             <h2>Lista de Chamados</h2>
-            <div>
-                <input type="text" id="campo-busca" placeholder="Buscar Chamado">
+            <div class="search-box">
+                <input type="text" id="campo-busca" placeholder="Buscar por título...">
             </div>
-            <!-- Lista onde os itens cadastrados vão aparecer via JavaScript -->
-            <ul id="lista-chamados"></ul>
+            <ul id="lista-chamados" class="chamados-list"></ul>
         </section>
     </main>
 
