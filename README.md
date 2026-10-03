@@ -21,3 +21,6 @@ Como Executar o Projeto
 
 Rastreabilidade
 As tarefas deste ciclo de refatoracao foram registradas e organizadas no quadro Trello do projeto, garantindo o fluxo continuo e rastreavel do desenvolvimento.
+
+Link para o quadro de tarefas
+https://trello.com/b/FOLuI9fC/meu-quadro-do-trello
