@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Chamados</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Sistema de Chamados</h1>
+        <nav class="header-nav">
+            <a href="#cadastro" class="nav-link">Novo Chamado</a>
+            <a href="#listagem" class="nav-link">Listagem</a>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <!-- Seção de Cadastro -->
+        <section id="cadastro" class="card-section">
+            <h2>Novo Chamado</h2>
+            <form id="form-chamado" class="form">
+                <div class="form-group">
+                    <label for="titulo">Título do Chamado</label>
+                    <input type="text" id="titulo" placeholder="Ex: Computador não liga" autocomplete="off">
+                    <small class="msg-erro" id="erro-titulo"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="categoria">Categoria</label>
+                    <select id="categoria">
+                        <option value="">-- Selecione uma categoria --</option>
+                        <option value="Suporte">Suporte Técnico</option>
+                        <option value="Manutenção">Manutenção Predial</option>
+                    </select>
+                    <small class="msg-erro" id="erro-categoria"></small>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Cadastrar Chamado</button>
+            </form>
+        </section>
+
+        <!-- Seção de Listagem -->
+        <section id="listagem" class="card-section">
+            <h2>Lista de Chamados</h2>
+            <div class="search-box">
+                <input type="text" id="campo-busca" placeholder="Buscar por título...">
+            </div>
+            <ul id="lista-chamados" class="chamados-list"></ul>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
